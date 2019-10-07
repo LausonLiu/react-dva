@@ -25,8 +25,12 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
-    apis.testCnode().then((res) => {
-      console.log(res)
+    // apis.testCnode().then((res) => {
+    //   console.log(res)
+    // })
+    apis.mockData().then( (res) => {
+      console.log(res);
+      
     })
   }
 

@@ -19,6 +19,11 @@ export default {
             console.log(payload)
             _state.cnodeData = payload.data
             return _state;
+        },
+        testPath(state,payload){
+            console.log("我是用户页面",payload);
+            
+            return state
         }
     },
     effects:{
@@ -40,6 +45,17 @@ export default {
                 })
             }
             
+        }
+    },
+    subscriptions:{
+        haha({dispatch, history}){
+            history.listen( ({pathname}) => {
+                if ( pathname === "/user") {
+                    dispatch({
+                        type:"testPath"
+                    })
+                }
+            })
         }
     }
 }
